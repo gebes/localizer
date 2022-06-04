@@ -2,6 +2,7 @@ package localization
 
 import (
 	"errors"
+	. "localizer/pkg/env"
 	"localizer/pkg/file"
 	"localizer/pkg/translator"
 	"os"

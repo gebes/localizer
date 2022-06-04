@@ -23,5 +23,3 @@ go.work
 .idea
 .DS_Store
 .env
-
-fahro-app-google-cloud.json
