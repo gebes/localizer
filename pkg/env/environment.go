@@ -19,6 +19,12 @@ func init() {
 	}
 
 	SourceLanguage = os.Getenv("SOURCE_LANGUAGE")
-	TargetLanguagesDeepL = strings.Split(os.Getenv("TARGET_LANGUAGES_DEEPL"), ",")
-	TargetLanguagesGoogle = strings.Split(os.Getenv("TARGET_LANGUAGES_GOOGLE"), ",")
+	t := os.Getenv("TARGET_LANGUAGES_DEEPL")
+	if len(t) != 0 {
+		TargetLanguagesDeepL = strings.Split(t, ",")
+	}
+	t = os.Getenv("TARGET_LANGUAGES_GOOGLE")
+	if len(t) != 0 {
+		TargetLanguagesGoogle = strings.Split(t, ",")
+	}
 }

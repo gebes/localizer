@@ -29,7 +29,7 @@ func Update(path string) error {
 
 	for _, language := range TargetLanguagesDeepL {
 		target := map[string]string{}
-		if _, err := os.Stat(yamlPath(path, language)); err != nil && !errors.Is(err, os.ErrNotExist) {
+		if _, err = os.Stat(yamlPath(path, language)); err == nil && !errors.Is(err, os.ErrNotExist) {
 			target, err = ReadFileMap(yamlPath(path, language))
 			if err != nil {
 				return err
@@ -51,7 +51,7 @@ func Update(path string) error {
 	}
 	for _, language := range TargetLanguagesGoogle {
 		target := map[string]string{}
-		if _, err := os.Stat(yamlPath(path, language)); err != nil && !errors.Is(err, os.ErrNotExist) {
+		if _, err := os.Stat(yamlPath(path, language)); err == nil && !errors.Is(err, os.ErrNotExist) {
 			target, err = ReadFileMap(yamlPath(path, language))
 			if err != nil {
 				return err

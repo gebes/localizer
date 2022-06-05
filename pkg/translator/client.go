@@ -5,6 +5,7 @@ import (
 	"context"
 	"github.com/DaikiYamakawa/deepl-go"
 	"golang.org/x/text/language"
+	"localizer/pkg/env"
 	"localizer/pkg/logger"
 )
 
@@ -13,21 +14,30 @@ var googleClient *translate.Client
 
 func init() {
 	logger.Debug.Printf("Initializing Google Translate client")
-
 	var err error
-	googleClient, err = translate.NewClient(context.Background())
-	if err != nil {
-		logger.Error.Fatalln("Failed to create Google Translate client:", err)
-	}
-	logger.Debug.Printf("Google Translate client initialized")
 
-	logger.Debug.Printf("Initializing DeepL client")
-	deeplClient, err = deepl.New("https://api-free.deepl.com", logger.Debug)
-
-	if err != nil {
-		logger.Error.Fatalln("Failed to create DeepL client:", err)
+	if len(env.TargetLanguagesGoogle) == 0 {
+		logger.Debug.Printf("Skipping Google Translate client initialization")
+	} else {
+		googleClient, err = translate.NewClient(context.Background())
+		if err != nil {
+			logger.Error.Fatalln("Failed to create Google Translate client:", err)
+		}
+		logger.Debug.Printf("Google Translate client initialized")
 	}
-	logger.Debug.Printf("DeepL client initialized")
+
+	if len(env.TargetLanguagesDeepL) == 0 {
+		logger.Debug.Printf("Skipping DeepL client initialization")
+
+	} else {
+		logger.Debug.Printf("Initializing DeepL client")
+		deeplClient, err = deepl.New("https://api-free.deepl.com", logger.Debug)
+
+		if err != nil {
+			logger.Error.Fatalln("Failed to create DeepL client:", err)
+		}
+		logger.Debug.Printf("DeepL client initialized")
+	}
 
 }
 
