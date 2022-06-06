@@ -24,5 +24,3 @@ jobs:
         goarch: ${{ matrix.goarch }}
         project_path: "./cmd/localizer"
         binary_name: "localizer"
-        retry: 10
-        overwrite: true
