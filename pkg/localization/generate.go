@@ -2,10 +2,10 @@ package localization
 
 import (
 	"errors"
-	. "localizer/pkg/env"
-	"localizer/pkg/file"
-	"localizer/pkg/logger"
-	"localizer/pkg/translator"
+	. "github.com/Gebes/localizer/pkg/env"
+	"github.com/Gebes/localizer/pkg/file"
+	"github.com/Gebes/localizer/pkg/logger"
+	"github.com/Gebes/localizer/pkg/translator"
 	"os"
 )
 

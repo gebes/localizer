@@ -1,8 +1,8 @@
 package main
 
 import (
-	"localizer/pkg/localization"
-	"localizer/pkg/logger"
+	"github.com/Gebes/localizer/pkg/localization"
+	"github.com/Gebes/localizer/pkg/logger"
 	"os"
 )
 

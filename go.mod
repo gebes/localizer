@@ -1,4 +1,4 @@
-module localizer
+module github.com/Gebes/localizer
 
 go 1.18
 

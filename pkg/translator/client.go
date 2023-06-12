@@ -4,9 +4,9 @@ import (
 	"cloud.google.com/go/translate"
 	"context"
 	"github.com/DaikiYamakawa/deepl-go"
+	"github.com/Gebes/localizer/pkg/env"
+	"github.com/Gebes/localizer/pkg/logger"
 	"golang.org/x/text/language"
-	"localizer/pkg/env"
-	"localizer/pkg/logger"
 )
 
 var deeplClient *deepl.Client

@@ -1,9 +1,9 @@
 package localization
 
 import (
+	"github.com/Gebes/localizer/pkg/file"
+	"github.com/Gebes/localizer/pkg/yamlx"
 	"gopkg.in/yaml.v3"
-	"localizer/pkg/file"
-	"localizer/pkg/yamlx"
 	"path"
 )
 
